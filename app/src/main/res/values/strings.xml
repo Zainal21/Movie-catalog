@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Movie Catalog</string>
+    <string name="copyright_text_hint">Created By Muhamad Zainal Arifin</string>
+    <string name="text_hint_splash">Movie Catalog</string>
+</resources>

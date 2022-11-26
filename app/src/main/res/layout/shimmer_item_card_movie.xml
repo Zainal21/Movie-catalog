@@ -1,0 +1,182 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
+    android:background="@color/colorSecondary"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container_shimmer_card_item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:transitionName="cardView"
+        app:cardBackgroundColor="@color/cardColor"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/shimmerColor"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/news_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@color/shimmerColor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/date_news"
+                    style="@style/AuthorHiglight"
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/shimmerColor"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/news_title"
+                    style="@style/MediumText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/shimmerColor" />
+
+                <TextView
+                    android:id="@+id/detail_news"
+                    style="@style/TextUnderlineSecondaryColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/shimmerColor"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container_shimmer_card_item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_mxlarge"
+        android:transitionName="cardView"
+        app:cardBackgroundColor="@color/cardColor"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/container"
+        app:layout_constraintTop_toBottomOf="@+id/container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/shimmerColor"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/news_thumbnail_1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@color/shimmerColor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/date_news_1"
+                    style="@style/AuthorHiglight"
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/shimmerColor"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/news_title_1"
+                    style="@style/MediumText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/shimmerColor" />
+
+                <TextView
+                    android:id="@+id/detail_news_1"
+                    style="@style/TextUnderlineSecondaryColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/shimmerColor"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container_shimmer_card_item4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_mxlarge"
+        android:transitionName="cardView"
+        app:cardBackgroundColor="@color/cardColor"
+        app:cardCornerRadius="22dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/container"
+        app:layout_constraintTop_toBottomOf="@+id/container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/shimmerColor"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/news_thumbnail_2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@color/shimmerColor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/date_news_2"
+                    style="@style/AuthorHiglight"
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/shimmerColor"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/news_title_2"
+                    style="@style/MediumText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/shimmerColor" />
+
+                <TextView
+                    android:id="@+id/detail_news_2"
+                    style="@style/TextUnderlineSecondaryColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/shimmerColor"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

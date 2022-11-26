@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeMovieActivity">
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_movie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_guideline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="17dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintGuide_percent="0.04"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.96"
+            app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints,UselessLeaf">
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="15sp"
+            android:id="@+id/textActionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pencarian Film"
+            android:fontFamily="@font/poppins"
+            style="@style/TextActionBar"
+            app:layout_constraintBottom_toTopOf="@id/search_container"
+            app:layout_constraintTop_toBottomOf="@id/top_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline" />
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/btn_back"
+            style="@style/Rippleeffect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="25dp"
+            android:translationX="20dp"
+            android:src="@drawable/ic_back"
+            app:tint="@color/textColor"
+            tools:ignore="MissingConstraints,NotSibling" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/search_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/cardColor"
+            app:cardCornerRadius="20sp"
+            app:cardElevation="0dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="@id/start_guideline"
+            app:layout_constraintEnd_toEndOf="@id/end_guideline"
+            app:layout_constraintTop_toBottomOf="@id/textActionBar">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/form_input_keyword_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorSecondary"
+                    android:hint="Masukkan Judul Film"
+                    android:inputType="text"
+                    android:textColorHint="@color/gray_600"
+                    android:textColor="@color/gray_600"
+                    android:text=""
+                    android:fontFamily="@font/poppins"
+                    android:paddingEnd="8sp"
+                    android:paddingStart="15sp"
+                    android:paddingVertical="18sp"
+                    android:textSize="15sp"/>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_search_movie"
+                    style="@style/Rippleeffect"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    app:cardBackgroundColor="@color/blueSecondary"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/search_icon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_search"
+                            android:layout_weight="1"
+                            app:tint="@color/colorWhite" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_container_result_movie_list"
+            android:visibility="gone"
+            android:layout_marginTop="170dp"
+            android:elevation="0dp"
+            android:padding="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/colorSecondary">
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:fontFamily="@font/poppins"
+                    android:layout_marginTop="27sp"
+                    android:visibility="gone"
+                    android:id="@+id/txt_message_not_found"
+                    android:textColor="@color/gray_500"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Oops! Data Film Tidak Ditemukan😢"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+                <TextView
+                    android:layout_marginTop="2dp"
+                    android:visibility="gone"
+                    android:id="@+id/txt_message_not_found_desc"
+                    android:textColor="@color/gray_400"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Coba masukkan keyword dengan kata kunci \n yang berbeda."
+                    android:textStyle="normal"
+                    android:fontFamily="@font/poppins"
+                    android:textSize="15sp"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:indeterminateDrawable="@drawable/bg_progress_bar"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_container_shimmer"
+            android:visibility="visible"
+            android:layout_marginTop="170dp"
+            android:elevation="0dp"
+            android:padding="70dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/colorSecondary">
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/container_shimmer_car_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:background="@color/colorSecondary"
+                android:orientation="vertical"
+                android:padding="8dp">
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/container_shimmer_card_item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:transitionName="cardView"
+                    app:cardBackgroundColor="@color/cardColor"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/shimmerColor"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/news_thumbnail"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@color/shimmerColor" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/date_news"
+                                style="@style/AuthorHiglight"
+                                android:layout_width="111dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shimmerColor"
+                                android:text="" />
+
+                            <TextView
+                                android:id="@+id/news_title"
+                                style="@style/MediumText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shimmerColor" />
+
+                            <TextView
+                                android:id="@+id/detail_news"
+                                style="@style/TextUnderlineSecondaryColor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:background="@color/shimmerColor"
+                                android:text="" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/container_shimmer_card_item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_mxlarge"
+                    android:transitionName="cardView"
+                    app:cardBackgroundColor="@color/cardColor"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/container"
+                    app:layout_constraintTop_toBottomOf="@+id/container">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/shimmerColor"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/news_thumbnail_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@color/shimmerColor" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/date_news_1"
+                                style="@style/AuthorHiglight"
+                                android:layout_width="111dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shimmerColor"
+                                android:text="" />
+
+                            <TextView
+                                android:id="@+id/news_title_1"
+                                style="@style/MediumText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shimmerColor" />
+
+                            <TextView
+                                android:id="@+id/detail_news_1"
+                                style="@style/TextUnderlineSecondaryColor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:background="@color/shimmerColor"
+                                android:text="" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/container_shimmer_card_item4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_mxlarge"
+                    android:transitionName="cardView"
+                    app:cardBackgroundColor="@color/cardColor"
+                    app:cardCornerRadius="22dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/container"
+                    app:layout_constraintTop_toBottomOf="@+id/container">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/shimmerColor"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/news_thumbnail_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@color/shimmerColor" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/date_news_2"
+                                style="@style/AuthorHiglight"
+                                android:layout_width="111dp"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shimmerColor"
+                                android:text="" />
+
+                            <TextView
+                                android:id="@+id/news_title_2"
+                                style="@style/MediumText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/shimmerColor" />
+
+                            <TextView
+                                android:id="@+id/detail_news_2"
+                                style="@style/TextUnderlineSecondaryColor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:background="@color/shimmerColor"
+                                android:text="" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+        </androidx.cardview.widget.CardView>
+     </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
