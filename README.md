@@ -1,4 +1,4 @@
-# Movie Catalog (Experiment Apps)
+# Movie Catalog (Weekend Gabut Apps)
 
 ## Prerequiste
 
