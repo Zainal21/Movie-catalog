@@ -25,15 +25,15 @@ $  git clone git remote add origin https://github.com/Zainal21/MovieCatalog.git
 
 - Splash Screen
 
-![splash](public/splash_screen.png)
+![splash](public/splash_screen.png){ width: 200px;height:600px }
 
 - Movie Search List
 
-![home](public/movie_detail_screen.jpg)
+![home](public/movie_detail_screen.jpg){ width: 200px;height:600px }
 
 - Movie Detail List
 
-![home](public/movie_detail_screen.jpg)
+![home](public/movie_detail_screen.jpg){ width: 200px;height:600px }
 
 Copyright © 2022 by Muhamad Zainal Arifin
 
