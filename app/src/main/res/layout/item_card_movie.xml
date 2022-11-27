@@ -1,7 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/layout_parent_item_movie_card">
-
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:padding="8dp"
+    android:elevation="@dimen/spacing_xmlarge">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/container_movie_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/cardColor"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="0dp"
+        android:transitionName="cardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/image_thumbnail"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:src="@color/shimmerColor"
+                android:scaleType="centerCrop" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/date_published"
+                    style="@style/FilmHiglight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="16, Desember 2021" />
+                <TextView
+                    android:id="@+id/movie_title_content"
+                    style="@style/MediumText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="title_moview" />
+                <TextView
+                    android:id="@+id/movie_short_description"
+                    style="@style/SemiSmallText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="description_text" />
+                <TextView
+                    android:id="@+id/movie_detail_text"
+                    style="@style/TextUnderlineSecondaryColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="See Movie Detail" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

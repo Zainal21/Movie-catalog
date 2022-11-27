@@ -37,7 +37,7 @@
 
                 <TextView
                     android:id="@+id/date_news"
-                    style="@style/AuthorHiglight"
+                    style="@style/FilmHiglight"
                     android:layout_width="111dp"
                     android:layout_height="wrap_content"
                     android:background="@color/shimmerColor"
@@ -96,7 +96,7 @@
 
                 <TextView
                     android:id="@+id/date_news_1"
-                    style="@style/AuthorHiglight"
+                    style="@style/FilmHiglight"
                     android:layout_width="111dp"
                     android:layout_height="wrap_content"
                     android:background="@color/shimmerColor"
@@ -155,7 +155,7 @@
 
                 <TextView
                     android:id="@+id/date_news_2"
-                    style="@style/AuthorHiglight"
+                    style="@style/FilmHiglight"
                     android:layout_width="111dp"
                     android:layout_height="wrap_content"
                     android:background="@color/shimmerColor"

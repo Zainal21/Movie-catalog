@@ -23,7 +23,7 @@
         <item name="android:textColor">@color/gray</item>
         <item name="textAllCaps">true</item>
     </style>
-    <style name="AuthorHiglight">
+    <style name="FilmHiglight">
         <item name="android:letterSpacing">0.15</item>
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">@color/gray_600</item>

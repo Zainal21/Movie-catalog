@@ -28,7 +28,8 @@ android {
             minifyEnabled false
             debuggable false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_API_URL", "\"https://www.omdbapi.com/?apikey=91b7f888\""
+            buildConfigField "String", "BASE_API_URL", "\"https://www.omdbapi.com/\""
+            buildConfigField "String", "API_KEY", "\"91b7f888\""
         }
 
         debug{
@@ -36,6 +37,7 @@ android {
             debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_API_URL", "\"https://www.omdbapi.com/?apikey=91b7f888\""
+            buildConfigField "String", "API_KEY", "\"91b7f888\""
         }
     }
 

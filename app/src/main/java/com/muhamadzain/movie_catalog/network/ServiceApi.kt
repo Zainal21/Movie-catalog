@@ -1,5 +1,6 @@
 package com.muhamadzain.movie_catalog.network
 
+import com.muhamadzain.movie_catalog.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -15,7 +16,7 @@ object ServiceApi {
                 .addInterceptor(interceptor)
                 .build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://www.omdbapi.com/?apikey=91b7f888")
+                .baseUrl(BuildConfig.BASE_API_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(
                     RxJava2CallAdapterFactory.create())
