@@ -15,29 +15,38 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31"
-        android:screenOrientation="portrait"
-        >
+        android:screenOrientation="portrait">
         <activity
+            android:screenOrientation="portrait"
             android:name=".ui.movie_detail.MovieDetailActivity"
             android:exported="false"
-            android:label="Detail Film">
+            android:resizeableActivity="false"
+            android:label="Detail Film"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            tools:ignore="LockedOrientationActivity,NonResizeableActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".ui.home.HomeMovieActivity"
-            android:exported="false">
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:resizeableActivity="false"
+            tools:ignore="ExtraText,LockedOrientationActivity,NonResizeableActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".ui.SplashScreenActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:resizeableActivity="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            tools:ignore="LockedOrientationActivity,NonResizeableActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 

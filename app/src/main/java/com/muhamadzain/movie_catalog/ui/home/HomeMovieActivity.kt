@@ -47,10 +47,6 @@ class HomeMovieActivity : BaseActivity(), HomeMovieView.View {
         }
     }
 
-    private fun getMovieContent(){
-        Toast.makeText(this, "This click result movie", Toast.LENGTH_SHORT).show();
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_movie)
@@ -83,10 +79,13 @@ class HomeMovieActivity : BaseActivity(), HomeMovieView.View {
                 response.search as ArrayList<SearchMovieResponse.SearchItem>
             )
             recylerViewMovieItem.adapter = moviewItems
+        }else{
+            Toast.makeText(this, "Data Film Tidak Ditemukan", Toast.LENGTH_SHORT).show()
         }
     }
 
     override fun onReject(response: SearchMovieResponse) {
+        Toast.makeText(this, "Data Film tidak Ditemukan", Toast.LENGTH_SHORT).show()
         shimmerLayoutContainerItem.visibility = View.GONE
     }
 

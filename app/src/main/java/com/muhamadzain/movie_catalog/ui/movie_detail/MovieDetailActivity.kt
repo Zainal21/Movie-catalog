@@ -59,7 +59,7 @@ class MovieDetailActivity : BaseActivity(), MovieDetailView.View{
         val status = response.response
         if(status == "True"){
             movie_plot.text = response.plot
-            movie_timestamp.text = "Release : " + response.released +  " | " + response.year
+            movie_timestamp.text = "Release : " + response.released +  " | " + response.runtime + "\n"  + "Language : " + response.language
             movie_title.text = response.title
             val factory = DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build()
             Glide.with(movie_thumbnail)

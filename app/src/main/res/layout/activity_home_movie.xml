@@ -207,7 +207,7 @@
                     <androidx.core.widget.NestedScrollView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-                        <include layout="@layout/shimmer_item_card_movie"></include>
+                        <include layout="@layout/shimmer_item_card_movie" />
                     </androidx.core.widget.NestedScrollView>
                 </LinearLayout>
                 </com.facebook.shimmer.ShimmerFrameLayout>

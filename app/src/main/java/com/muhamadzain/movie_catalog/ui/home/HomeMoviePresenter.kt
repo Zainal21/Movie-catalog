@@ -32,7 +32,6 @@ class HomeMoviePresenter(
                 view.hideLoading()
                 Log.e("error", it.toString())
             })
-
         mCompositeDisposable!!.add(disposable)
     }
 

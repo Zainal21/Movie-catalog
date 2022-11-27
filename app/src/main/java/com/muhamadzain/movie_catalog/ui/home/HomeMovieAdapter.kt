@@ -19,7 +19,7 @@ import com.muhamadzain.movie_catalog.ui.movie_detail.MovieDetailActivity
 
 class HomeMovieAdapter(
     private val context: Context,
-    val movieItemsList : ArrayList<SearchMovieResponse.SearchItem>) : RecyclerView.Adapter<HomeMovieAdapter.MyViewHolder>()
+    private val movieItemsList : ArrayList<SearchMovieResponse.SearchItem>) : RecyclerView.Adapter<HomeMovieAdapter.MyViewHolder>()
 {
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var title: TextView = view.findViewById(R.id.movie_title_content)
@@ -49,11 +49,7 @@ class HomeMovieAdapter(
             .into(holder.image_thumbnail)
         holder.container_movie_card.setOnClickListener {
             val _intent = Intent(holder.itemView.context, MovieDetailActivity::class.java)
-            _intent.putExtra("intent_title", data.title)
             _intent.putExtra("intent_ImdbID", data.imdbID)
-            _intent.putExtra("intent_image", data.poster)
-            _intent.putExtra("intent_description", data.type)
-            _intent.putExtra("inte_published", data.year)
             holder.itemView.context.startActivity(_intent)
         }
     }
