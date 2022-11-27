@@ -31,9 +31,9 @@ $  git clone git remote add origin https://github.com/Zainal21/MovieCatalog.git
 
 ![home](public/movie_detail_screen.jpg)
 
-- Movie Detail
+- Movie Detail List
 
-- ![detail](public/movie_list_screen.jpg)
+![home](public/movie_detail_screen.jpg)
 
 Copyright © 2022 by Muhamad Zainal Arifin
 
