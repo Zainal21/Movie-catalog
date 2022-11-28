@@ -124,23 +124,32 @@
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_container_result_movie_list"
-                android:visibility="gone"
                 android:layout_marginTop="170dp"
                 android:elevation="0dp"
                 android:padding="70dp"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 app:cardBackgroundColor="@color/colorSecondary">
                 <LinearLayout
+                    android:id="@+id/not_found_container"
                     android:layout_marginBottom="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/not_found_icon"
+                        android:layout_width="350sp"
+                        android:layout_height="250sp"
+                        android:layout_marginTop="@dimen/spacing_xmlarge"
+                        android:layout_gravity="center"
+                        app:lottie_url="https://assets8.lottiefiles.com/packages/lf20_i2rkmcsu.json"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"/>
                     <TextView
                         android:fontFamily="@font/poppins"
                         android:layout_marginTop="27sp"
-                        android:visibility="gone"
                         android:id="@+id/txt_message_not_found"
                         android:textColor="@color/gray_500"
                         android:layout_width="wrap_content"
@@ -152,7 +161,6 @@
                         android:gravity="center"/>
                     <TextView
                         android:layout_marginTop="2dp"
-                        android:visibility="gone"
                         android:id="@+id/txt_message_not_found_desc"
                         android:textColor="@color/gray_400"
                         android:layout_width="match_parent"
@@ -163,22 +171,10 @@
                         android:textSize="15sp"
                         android:layout_gravity="center"
                         android:gravity="center"/>
-                    <ProgressBar
-                        android:id="@+id/progress"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        android:indeterminateDrawable="@drawable/bg_progress_bar"
-                        android:layout_gravity="center_horizontal"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_container_shimmer"
-                android:visibility="visible"
                 android:layout_marginTop="170dp"
                 android:elevation="0dp"
                 android:padding="70dp"

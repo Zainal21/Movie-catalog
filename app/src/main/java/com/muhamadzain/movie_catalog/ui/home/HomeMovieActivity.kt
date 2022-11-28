@@ -6,8 +6,10 @@ import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.facebook.shimmer.ShimmerFrameLayout
@@ -27,13 +29,19 @@ class HomeMovieActivity : BaseActivity(), HomeMovieView.View {
     private lateinit var inputFormSearchKeyword : EditText
     private lateinit var shimmerLayoutContainerItem : ShimmerFrameLayout
     private lateinit var recylerViewMovieItem : RecyclerView
+    private lateinit var notFoundContainer : LinearLayout
     private lateinit var presenter: HomeMoviePresenter
+    private lateinit var cardContainerResultMovieList : CardView
+    private lateinit var cardContainerShimmer : CardView
 
     private fun initComponents(){
         btnSearchMovie = findViewById(R.id.btn_search_movie)
         inputFormSearchKeyword = findViewById(R.id.form_input_keyword_search)
         shimmerLayoutContainerItem = findViewById(R.id.container_shimmer_car_layout)
         recylerViewMovieItem = findViewById(R.id.rvMovieContent)
+        notFoundContainer = findViewById(R.id.not_found_container)
+        cardContainerResultMovieList = findViewById(R.id.card_container_result_movie_list)
+        cardContainerShimmer = findViewById(R.id.card_container_shimmer)
     }
 
     private fun initEventListener(){
@@ -70,9 +78,12 @@ class HomeMovieActivity : BaseActivity(), HomeMovieView.View {
     @SuppressLint("LongLogTag")
     override fun onSuccessRetrieve(response: SearchMovieResponse) {
         val status = response.response
-        shimmerLayoutContainerItem.visibility = View.VISIBLE
+        notFoundContainer.visibility = View.GONE
+        shimmerLayoutContainerItem.visibility = View.GONE
+        cardContainerResultMovieList.visibility = View.GONE
         if(status.toString() == "True"){
-            shimmerLayoutContainerItem.visibility = View.GONE
+            cardContainerShimmer.visibility = View.VISIBLE
+            cardContainerResultMovieList.visibility = View.GONE
             recylerViewMovieItem.visibility = View.VISIBLE
             recylerViewMovieItem.layoutManager = LinearLayoutManager(this)
             val moviewItems = HomeMovieAdapter(this,
@@ -80,12 +91,16 @@ class HomeMovieActivity : BaseActivity(), HomeMovieView.View {
             )
             recylerViewMovieItem.adapter = moviewItems
         }else{
-            Toast.makeText(this, "Data Film Tidak Ditemukan", Toast.LENGTH_SHORT).show()
+            cardContainerShimmer.visibility = View.GONE
+            cardContainerResultMovieList.visibility = View.VISIBLE
+            notFoundContainer.visibility = View.VISIBLE
         }
     }
 
     override fun onReject(response: SearchMovieResponse) {
-        Toast.makeText(this, "Data Film tidak Ditemukan", Toast.LENGTH_SHORT).show()
+        cardContainerResultMovieList.visibility = View.VISIBLE
+        notFoundContainer.visibility = View.VISIBLE
+        cardContainerShimmer.visibility = View.GONE
         shimmerLayoutContainerItem.visibility = View.GONE
     }
 

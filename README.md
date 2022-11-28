@@ -10,6 +10,7 @@
 - Kotlin
 - Retrofit + OKhttp
 - RxJava
+- Lottie Animation
 - OMDb API
 
 ## Installation
@@ -34,6 +35,10 @@ $  git clone git remote add origin https://github.com/Zainal21/MovieCatalog.git
 ### 3. Movie Detail List
      
 <img src="public/movie_detail_screen.jpg" alt="drawing" style="width:400px;"/>
+
+### 4. Not Found Screen
+
+<img src="public/screen_not_found.jpg" alt="drawing" style="width:400px;"/>
 
 Copyright © 2022 by Muhamad Zainal Arifin
 

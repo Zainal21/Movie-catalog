@@ -24,9 +24,9 @@ class HomeMovieAdapter(
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var title: TextView = view.findViewById(R.id.movie_title_content)
         var date: TextView = view.findViewById(R.id.date_published)
-        var image_thumbnail = view.findViewById<ImageView>(R.id.image_thumbnail)
-        var container_movie_card = view.findViewById<MaterialCardView>(R.id.container_movie_card)
-        var movie_short_description = view.findViewById<TextView>(R.id.movie_short_description)
+        var imageThumbnail: ImageView = view.findViewById(R.id.image_thumbnail)
+        var containerMovieCard: MaterialCardView = view.findViewById(R.id.container_movie_card)
+        var movieShortDescription : TextView = view.findViewById(R.id.movie_short_description)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -39,18 +39,18 @@ class HomeMovieAdapter(
         val data = movieItemsList[position]
         holder.title.text = data.title.toString()
         holder.date.text = data.year.toString()
-        holder.movie_short_description.text = "Type : " + data.type.toString()
+        holder.movieShortDescription.text = "Type : " + data.type.toString()
         val factory = DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build()
-        Glide.with(holder.image_thumbnail)
+        Glide.with(holder.imageThumbnail)
             .load(data.poster.toString())
             .error(R.layout.shimmer_item_card_movie)
             .centerCrop()
             .transition(DrawableTransitionOptions.withCrossFade(factory))
-            .into(holder.image_thumbnail)
-        holder.container_movie_card.setOnClickListener {
-            val _intent = Intent(holder.itemView.context, MovieDetailActivity::class.java)
-            _intent.putExtra("intent_ImdbID", data.imdbID)
-            holder.itemView.context.startActivity(_intent)
+            .into(holder.imageThumbnail)
+        holder.containerMovieCard.setOnClickListener {
+            val intent = Intent(holder.itemView.context, MovieDetailActivity::class.java)
+            intent.putExtra("intent_ImdbID", data.imdbID)
+            holder.itemView.context.startActivity(intent)
         }
     }
 
