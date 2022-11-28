@@ -47,7 +47,7 @@ class HomeMovieActivity : BaseActivity(), HomeMovieView.View {
     private fun initEventListener(){
         btnSearchMovie.setOnClickListener {
             val keyword = inputFormSearchKeyword.text.toString()
-            if(keyword == null){
+            if(keyword.isEmpty()){
                 Toast.makeText(this, "Pencarian Kata kunci film belum diisikan", Toast.LENGTH_SHORT).show();
             }else{
                 presenter.sendSearchMovie(keyword)
