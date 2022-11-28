@@ -22,6 +22,8 @@ class MovieDetailPresenter(
         val disposable = ServiceApi.endpoint.getDetailMovie(Constant.API_KEY, imdbId, "full")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe { view.showLoading() }
+            .doAfterTerminate { view.hideLoading() }
             .subscribe( {
                 if (it.response != "False") {
                     view.onSuccessRetrieve(it)
