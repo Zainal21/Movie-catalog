@@ -21,8 +21,6 @@ class HomeMoviePresenter(
         val disposable = ServiceApi.endpoint.searchMovie(Constant.API_KEY,keyword)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .doOnSubscribe { view.hideLoading() }
-            .doAfterTerminate { view.hideLoading() }
             .subscribe({
                 if(it.response != "False"){
                     view.onSuccessRetrieve(it)
