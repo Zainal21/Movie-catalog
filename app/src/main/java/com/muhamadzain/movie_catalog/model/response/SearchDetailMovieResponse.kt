@@ -1,7 +1,9 @@
 package com.muhamadzain.movie_catalog.model.response
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class SearchDetailMovieResponse(
 
 	@field:SerializedName("Released")
@@ -70,7 +72,7 @@ data class SearchDetailMovieResponse(
 	@field:SerializedName("Writer")
 	val writer: String? = null
 ){
-
+	@Keep
 	data class RatingsItem(
 
 		@field:SerializedName("Value")

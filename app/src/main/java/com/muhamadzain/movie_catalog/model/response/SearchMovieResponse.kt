@@ -1,7 +1,9 @@
 package com.muhamadzain.movie_catalog.model.response
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 
+@Keep
 data class SearchMovieResponse(
 
 	@field:SerializedName("Response")
@@ -11,8 +13,12 @@ data class SearchMovieResponse(
 	val totalResults: String? = null,
 
 	@field:SerializedName("Search")
-	val search: List<SearchItem?>? = null
+	val search: List<SearchItem?>? = null,
+
+	@field:SerializedName("Error")
+	val error: String = ""
 ){
+	@Keep
 	data class SearchItem(
 
 		@field:SerializedName("Type")

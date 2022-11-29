@@ -1,12 +1,16 @@
 package com.muhamadzain.movie_catalog.ui.movie_detail
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Html
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.text.HtmlCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.transition.DrawableCrossFadeFactory
@@ -58,9 +62,20 @@ class MovieDetailActivity : BaseActivity(), MovieDetailView.View{
     override fun onSuccessRetrieve(response: SearchDetailMovieResponse) {
         val status = response.response
         if(status == "True"){
-            movie_plot.text = response.plot
-            movie_timestamp.text = "Release : " + response.released +  " | " + response.runtime + "\n"  + "Language : " + response.language
             movie_title.text = response.title
+            movie_timestamp.text =
+                Html.fromHtml(
+                    "Release      : <strong>" + response.released +  "</strong> | <strong>" + response.runtime + "</strong>"+
+                    "<br>"  + "Language   : <strong>" + response.language +"</strong>"+
+                    "<br>"  + "Genre      : <strong>" + response.genre +"</strong>"+
+                    "<br>"  + "Country    : <strong>" + response.country +"</strong>"+
+                    "<br>"  + "Awards     : <strong>" + response.awards +"</strong>"+
+                    "<br>"  + "Actors     : <strong>" +response.actors +"</strong>"+
+                    "<br>"  + "Writer     : <strong>"+  response.writer +"</strong>"+
+                    "<br>"  + "Director   : <strong>" + response.director +"</strong>"+
+                    "<br>"  + "Writer     : <strong>" + response.writer +"</strong>"+
+                    "<br>"  + "imdbRating : <strong>" + response.imdbRating +"</strong>")
+            movie_plot.text = Html.fromHtml("<strong>Plot : </strong>" + response.plot)
             val factory = DrawableCrossFadeFactory.Builder().setCrossFadeEnabled(true).build()
             Glide.with(movie_thumbnail)
                 .load(response.poster.toString())
